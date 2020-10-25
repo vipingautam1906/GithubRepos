@@ -1,0 +1,28 @@
+<div>
+    <label> User Name Planned to display with some imogie</label>
+    <hr>
+    <div class="dropdown" (click)="onselecteditprofile('edit')">
+        <a class="btn btn-primary dropdown-toggle" role="button" data-toggle="dropdown" >
+            Edit Profile
+        </a>
+        <div class="form-group" *ngIf='editprofileclicked'>
+            <label >Phone No:</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Update Number"
+                   formControlName="pNumber" required>
+            <label >Name:</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Update Name"
+                   formControlName="uName" required>
+            <label >Email address:</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Update Email"
+                   formControlName="email" required>
+            <button type="submit" class="btn btn-outline-info">Save</button>
+        </div>
+    </div>
+
+</div>

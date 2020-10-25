@@ -1,0 +1,122 @@
+<hr>
+<div>
+    <div *ngIf="InputFromParent == 'questions'">
+        <div class="row">
+            <div class="col-12">
+                <div *ngFor="let i of questions ">
+                    <a routerLink="#" class="card-link">
+                        <div class="list-group-item clearfix">
+                            <div class="list-group-item-heading text-dark">{{ i.name }}</div>
+                            <p class="list-group-item-text text-black-50"> {{ i.description }} </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="InputFromParent == 'unanswered'">
+        Unanswered
+    </div>
+
+    <div *ngIf="InputFromParent == 'subjects'">
+        <label> Browse Categories </label>
+        <hr>
+        <div class="col-md-12">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-action">Digital Logic</li>
+                <li class="list-group-item list-group-item-action">Programming and DS</li>
+                <li class="list-group-item list-group-item-action">Algorithms</li>
+                <li class="list-group-item list-group-item-action">Computer Organisation and Architecture</li>
+                <li class="list-group-item list-group-item-action">Engineering Mathematics</li>
+                <li class="list-group-item list-group-item-action">Descrete Mathematics</li>
+                <li class="list-group-item list-group-item-action">Database Management Systems</li>
+                <li class="list-group-item list-group-item-action">Theory Of Computation</li>
+                <li class="list-group-item list-group-item-action">compiler Design</li>
+                <li class="list-group-item list-group-item-action">Computer Networks</li>
+            </ul>
+        </div>
+    </div >
+
+    <div *ngIf="InputFromParent == 'users'">
+        Lists of registered USers will be here
+    </div>
+
+    <div *ngIf="InputFromParent == 'blogs'">
+        Blogs
+    </div>
+
+    <div *ngIf="InputFromParent == 'postBlog'">
+       <label>New Post</label>
+        <hr>
+        <div class="form-group">
+            <label >choose a category for your post </label>
+            <input type="texts"
+                   class="form-control"
+                   placeholder=""
+                   formControlName="post" required>
+        </div>
+    </div>
+
+    <div *ngIf="InputFromParent == 'addQuestion' ">
+            <form [formGroup]="formGroup">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-2">
+                            <label >Category:</label>
+                        </div>
+                        <div class="col-8">
+                            <input pInputText
+                                   class="form-control"
+                                   placeholder="Enter Category"
+                                   formControlName="qCategory" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label >Description:</label>
+                        </div>
+                        <div class="col-8">
+                            <input pInputText
+                                   class="form-control"
+                                   placeholder="Type the question Description"
+                                   formControlName="description" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label >File/Image: </label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder=""
+                                   formControlName="path" required>
+                            <button class="btn btn-outline-info" (click)="onAddQuestion('receivedQuestion')" label="Save" type="submit">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+    </div>
+
+    <div *ngIf="InputFromParent == 'answerQuestion'">
+        <div class="form-group">
+            <label >Question Category</label>
+            <input type="texts"
+                   class="form-control"
+                   placeholder="Type the questions Category"
+                   formControlName="post" required>
+            <label >Description</label>
+            <input type="texts"
+                   class="form-control"
+                   placeholder="Enter Description"
+                   formControlName="post" required>
+            <label >File/Image</label>
+            <input type="texts"
+                   class="form-control"
+                   placeholder=""
+                   formControlName="post" required>
+        </div>
+    </div>
+
+
+</div>
