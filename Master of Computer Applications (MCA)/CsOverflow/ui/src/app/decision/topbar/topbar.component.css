@@ -1,3 +1,16 @@
 a{
-    color: black;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    align-content: center;
+}
+
+.navbar{
+    background-color: #00595E;
+    height: 40px;
+    align-content: center;
+}
+
+button{
+    color: white;
 }
