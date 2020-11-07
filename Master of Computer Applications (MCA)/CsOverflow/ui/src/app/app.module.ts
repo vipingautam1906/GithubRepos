@@ -14,6 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuestionsComponent } from './questions/questions.component';
 import {AuthenticationService} from "./authentication.service";
 import {QuestionsService} from "./questions.service";
+import {UserService} from "./user.service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -34,12 +36,13 @@ import {QuestionsService} from "./questions.service";
     BrowserModule,
     AppRoutingModule,
       ReactiveFormsModule,
-      FormsModule
-
+      FormsModule,
+      HttpClientModule
   ],
     providers: [
-      AuthenticationService,
-      QuestionsService
+        AuthenticationService,
+        QuestionsService,
+        UserService,
     ],
   bootstrap: [AppComponent]
 })

@@ -38,7 +38,18 @@
     </div >
 
     <div *ngIf="InputFromParent == 'users'">
-        Lists of registered USers will be here
+        <div class="row">
+            <div class="col-8">
+                <div *ngFor="let us of users ">
+                    <a routerLink="#" class="card-link">
+                        <div class="list-group-item clearfix">
+                            <div class="list-group-item-heading text-dark">{{ us.firstName }} </div>
+                            <p class="list-group-item-text text-black-50"> {{ us.email }} </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div *ngIf="InputFromParent == 'blogs'">

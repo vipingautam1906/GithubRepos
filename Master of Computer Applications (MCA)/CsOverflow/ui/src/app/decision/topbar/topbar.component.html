@@ -1,10 +1,10 @@
 <div *ngIf="isAuthenticated">
     <div class="row-cols-1">
-        <nav class="navbar navbar-expand-bg bg-light navbar-light " >
+        <nav class="navbar">
             <a class="navbar-brand" routerLink="/">Logo</a>
             <div class="btn-group">
-                <button type="button" class="btn btn-light" (click)="goTo('dashboard')">Dashboard</button>
-                <button type="button" class="btn btn-light" (click)="goTo('logout')">Logout</button>
+                <button type="button"  (click)="goTo('dashboard')">Dashboard</button>
+                <button type="button" (click)="goTo('logout')">Logout</button>
             </div>
         </nav>
     </div>
@@ -25,14 +25,14 @@
 
 <div *ngIf="!isAuthenticated">
     <div class=row-cols-1>
-        <nav class="navbar navbar-expand-bg bg-light navbar-light " >
+        <nav class="navbar" >
             <div class="navbar-header">
                 <a class="navbar-brand" routerLink="/">Logo</a>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a routerLink="/register">Sign Up</a></li>
-                <li><a routerLink="/login">Login</a></li>
-            </ul>
+            <div class="btn-group">
+                <button type="button" style="background-color: transparent"><a routerLink="/register">Sign Up</a></button>
+                <button type="button" style="background-color: transparent" ><a routerLink="/login">Login</a></button>
+            </div>
         </nav>
     </div>
     <div class="container-fluid">

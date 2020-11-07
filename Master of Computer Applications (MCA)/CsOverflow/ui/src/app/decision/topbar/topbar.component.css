@@ -6,11 +6,12 @@ a{
 }
 
 .navbar{
-    background-color: #00595E;
+    background-color: #00598E;
     height: 40px;
     align-content: center;
 }
 
 button{
     color: white;
+    background-color: transparent;
 }

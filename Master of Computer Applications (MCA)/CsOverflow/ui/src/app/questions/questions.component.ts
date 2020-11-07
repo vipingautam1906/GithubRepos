@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {QuestionsService} from "../questions.service";
-import {questionsData} from "../models";
+import {questionsData, User} from "../models";
 import {FormControl, FormGroup} from "@angular/forms";
+import {UserService} from "../user.service";
 
 
 @Component({
@@ -12,9 +13,10 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class QuestionsComponent implements OnInit {
   @Input() InputFromParent = "";
   questions: questionsData [];
+  users: User [];
   formGroup: FormGroup;
 
-  constructor(private questionsSer: QuestionsService) { }
+  constructor(private questionsSer: QuestionsService, private userSer: UserService) { }
 
   ngOnInit() {
       this.questions = this.questionsSer.getQuestion();
@@ -22,10 +24,12 @@ export class QuestionsComponent implements OnInit {
           qCategory: new FormControl(),
           description: new FormControl(),
           path: new FormControl()
-          }
-      );
-
+          });
+      this.userSer.getAllUser().subscribe((r) => {
+          this.users = r.map(e => new User(e) );
+      });
   }
+
 
   onAddQuestion( receivedQuestion: string ){
       const name = this.formGroup.get('qCategory').value;
